@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         '/firstAuth': (context) => FirstAuthPage(),
         '/secondAuth': (context) => SecondAuthPage(),
         '/passwordAuth':(context) => PasswordAuthPage()
-
       },
     );
   }

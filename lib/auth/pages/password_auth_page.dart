@@ -83,7 +83,7 @@ void checkPassword(){
                 ),
               ),
               Text(
-                'Введите ваш текущий пароль привязанный к phone',
+                'Введите ваш текущий пароль привязанный к ',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.grey[500],

@@ -1,36 +1,41 @@
 import 'package:flutter/material.dart';
 
 class SecondAuthPage extends StatefulWidget {
-
   const SecondAuthPage({Key? key}) : super(key: key);
 
   @override
   State<SecondAuthPage> createState() => _SecondAuthPageState();
 }
 
-
 class _SecondAuthPageState extends State<SecondAuthPage> {
-
   var buttonActivity = null;
 
-void checkPhoneTextField() {
-  final phone = phoneTextController.text;
-  if(phone.isNotEmpty) {
-    buttonActivity = (){Navigator.pushNamed(context, '/passwordAuth');};
-  }else{
-    buttonActivity = null;
+  void checkPhoneTextField() {
+    final phone = phoneTextController.text;
+    if (phone.isNotEmpty) {
+      //buttonActivity = (){Navigator.pushNamed(context, '/passwordAuth');};
+      buttonActivity = () {
+        Navigator.of(context).pushNamed(
+          '/passwordAuth',
+          arguments: phone,
+        );
+      };
+    } else {
+      buttonActivity = null;
+    }
+    setState(() {});
   }
-  setState(() {});
-}
 
-@override
+  @override
   void initState() {
     super.initState();
 
-    phoneTextController.addListener(() {checkPhoneTextField(); });
+    phoneTextController.addListener(() {
+      checkPhoneTextField();
+    });
   }
 
-final phoneTextController = TextEditingController();
+  final phoneTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

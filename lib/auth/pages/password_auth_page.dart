@@ -8,28 +8,30 @@ class PasswordAuthPage extends StatefulWidget {
 }
 
 class _PasswordAuthPageState extends State<PasswordAuthPage> {
-
   var buttonCheck = null;
 
-void checkPassword(){
-  final queryPassword = passwordTextController.text;
-  if(queryPassword.isNotEmpty){
-    buttonCheck = (){
-      if(queryPassword == 'admin'){
-        print('open page');
-      }
-    };
-  }else{
-    buttonCheck = null;
+  void checkPassword() {
+    final queryPassword = passwordTextController.text;
+    if (queryPassword.isNotEmpty) {
+      buttonCheck = () {
+        if (queryPassword == 'admin') {
+          print('open page');
+          Navigator.pushNamed(context, '/testPage');
+        }
+      };
+    } else {
+      buttonCheck = null;
+    }
+    setState(() {});
   }
-  setState(() {});
-}
 
-@override
+  @override
   void initState() {
     super.initState();
 
-    passwordTextController.addListener(() {checkPassword();});
+    passwordTextController.addListener(() {
+      checkPassword();
+    });
   }
 
   final passwordTextController = TextEditingController();

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vk_mobile/auth/pages/password_auth_page.dart';
 import 'package:vk_mobile/auth/pages/second_auth_page.dart';
 import 'auth/pages/first_auth_page.dart';
+import 'auth/pages/test_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/firstAuth': (context) => FirstAuthPage(),
         '/secondAuth': (context) => SecondAuthPage(),
-        '/passwordAuth':(context) => PasswordAuthPage()
+        '/passwordAuth':(context) => PasswordAuthPage(),
+        '/testPage':(context) => TestPage()
       },
     );
   }

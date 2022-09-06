@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vk_mobile/auth/pages/password_auth_page.dart';
 
 class SecondAuthPage extends StatefulWidget {
   const SecondAuthPage({Key? key}) : super(key: key);
@@ -13,13 +14,13 @@ class _SecondAuthPageState extends State<SecondAuthPage> {
   void checkPhoneTextField() {
     final phone = phoneTextController.text;
     if (phone.isNotEmpty) {
-      //buttonActivity = (){Navigator.pushNamed(context, '/passwordAuth');};
-      buttonActivity = () {
-        Navigator.of(context).pushNamed(
-          '/passwordAuth',
-          arguments: phone,
-        );
-      };
+      buttonActivity = (){Navigator.pushNamed(context, '/passwordAuth');};
+      // buttonActivity = () {
+      //   Navigator.of(context).pushNamed(
+      //     '/passwordAuth',
+      //     arguments: phone,
+      //   );
+      // };
     } else {
       buttonActivity = null;
     }
